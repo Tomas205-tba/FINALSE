@@ -101,8 +101,6 @@ void mcp4132_set_cutoff_frequency(float fc_hz) {
     mcp4132_write_register(MCP_WIPER0, (uint8_t)N);
 }
 
-//  Dentro de void main configure el ADC a 12 bits y el driver UART a 115200 baudios. Escriba el codigo que permita muestrear la señal del geófono con una frecuencia de muestreo de 1Khz, para ello use un timer y configurelo adecuadamente. Sien algun momento la señal analogica supera los 1.4V, deberá escribirse un valor de n=95 en el registro del wiper, si es menor a 0.9v Debera escribisrse n=42, para ello iuse las funciones de manejo del whoper desarrolladas , el mensaje debe de mandarse por UART un mensaje indicando al operario el valor dl whiper
-
 void app_main(void) {
     nvs_flash_init();
     spi_init();
@@ -145,7 +143,7 @@ void app_main(void) {
         vTaskDelay(pdMS_TO_TICKS(1000)); // Esperar 1 segundo para la próxima lectura
     }
 }
-//https://github.com/Tomas205-tba/FINALSE.git
+
 
 
 
